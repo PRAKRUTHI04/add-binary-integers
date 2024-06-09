@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class BinaryAdditionWithStringBuilder {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the first binary number
+        System.out.print("Enter the first binary number: ");
+        String binary1 = scanner.nextLine();
+
+        // Prompt the user to enter the second binary number
+        System.out.print("Enter the second binary number: ");
+        String binary2 = scanner.nextLine();
+
+        // Convert binary strings to integers
+        int num1 = Integer.parseInt(binary1, 2);
+        int num2 = Integer.parseInt(binary2, 2);
+
+        // Perform the addition
+        int sum = num1 + num2;
+
+        // Convert the sum back to a binary string
+        String binarySum = Integer.toBinaryString(sum);
+
+        // Use StringBuilder to build the result string
+        StringBuilder result = new StringBuilder("Sum of ");
+        result.append(binary1).append(" and ").append(binary2).append(" is ").append(binarySum);
+
+        // Output the result
+        System.out.println(result.toString());
+
+        // Close the scanner
+        scanner.close();
+    }
+}
